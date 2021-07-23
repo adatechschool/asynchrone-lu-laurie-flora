@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programmation Asynchrone</h1>
+    <h2>Callback</h2>
+        <p>Méthode la plus ancienne pour gérer de l'asynchrone en JS.<br>
+        Un Callback est une fonction passée en paramètre d'une <strong>fonction asychrone.</strong><br>
+        Lorsque la fonction asynchrone a fini de s'éxécuter, elle va transmettre son résultat à la fonction Callback
+        passée en paramètre. La fonction callback sera donc éxécutée de manière <strong>asynchrone</strong><br>
+        Exemple : element.addEventListener('click', function(e) { <br>
+        // Do something here ... <br>
+        });<br>
+        Pour gérer des erreurs dans les callback on place deux paramètre dans la fonction.
+        Le premier est l'erreur et le 2e est la donnée. Le paramètre erreur sert à renvoyer un message d'erreur.
+        </p>
+    <h2>Promesses</h2>
+        <p>En programmation, les notions de futurs (« futures »), 
+        promesses (« promises ») ou délais (« delay ») font référence 
+        à des techniques de synchronisation pour certains langages concurrents. 
+        Il s'agit d'abstractions qui servent de proxy pour un résultat non-connu au moment 
+        où il est référencé pour la première fois, car son calcul ou son obtention se feront 
+        « plus tard » à l'exécution.<br>
+        JS est synchrone et n'a qu'un thread d'éxécution <br>
+        L'objet Promise (pour « promesse ») est utilisé pour réaliser des traitements de façon asynchrone. 
+        Une promesse représente une valeur qui peut être disponible maintenant, dans le futur voire jamais.<br>
+        Prévoir un try catch pour débuguer les promesses lorqu'on utilise  <strong>async/await</strong> <a href ="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">try catch</a><br>
+        L'objet promise contient la fonction <strong>then()</strong> (éxécution du code lorque la promesse est résolue) 
+        et la fonction <strong>catch()</strong> (éxécution du code en cas d'erreur).<br>
+        L'avantage des promise est qu'elle peuvent être chaînées.<br>
+        Exemple :<br>
+        
+            const promise1 = new Promise((resolve, reject) => { <br>
+                                setTimeout(() => { <br>
+                                resolve('foo'); <br>
+                                }, 300); <br>
+                            }); <br>
+
+            promise1.then((value) => { <br>
+                console.log(value); <br>
+                // expected output: "foo" <br>
+            }); <br>
+
+        console.log(promise1); <br>
+/       / expected output: [object Promise] <br>
+               </p>
+
+    <h2>This</h2>
+    <p>This est un mot clef renvoyant l'adresse de l'objet en cours, 
+        c'est à dire la référence sur l'instance courante.</p>
+    <h2>Bind</h2>
+    <p>Méthode JS utilisée pour relier le this d'une fonction callback à la fonction principale.</p>
+    <h2>Requête</h2>
+               <p>Une requête est l'interrogation vers une base de donnée.
+                Le langage le plus connu pour gérer les données est SQL.</p>
+    <h2>Évènement</h2>
+    <p>Un évènement est une réaction émise suite à l'action d'un utilisateur.
+        Un évènement contient une fonction callback.
+    </p>
+    <h2>Listener</h2>
+    <p>On écoute un évènement lorsque celui-ci se déclenche. <br>
+    La fonction addEventListener(event, callback) fait cela.</p>
+
+</body>
+</html>
